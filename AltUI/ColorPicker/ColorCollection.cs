@@ -25,7 +25,7 @@ namespace  AltUI.ColorPicker
   /// 	<para>ColorCollection allows duplicate elements.</para>
   /// 	<para>Elements in this collection can be accessed using an integer index. Indexes in this collection are zero-based.</para>
   /// </remarks>
-  public class ColorCollection : Collection<Color>, ICloneable, IEquatable<ColorCollection>
+  public sealed class ColorCollection : Collection<Color>, ICloneable, IEquatable<ColorCollection>
   {
     #region Instance Fields
 
