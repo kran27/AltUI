@@ -17,7 +17,7 @@ namespace AltUI.Config
             Colors.DarkBackground = Color.FromArgb(47, 47, 47); // Control Clicked
             Colors.MediumBackground = Color.FromArgb(49, 51, 53);
             Colors.LightBackground = Color.FromArgb(26, 26, 28); // Control Colour
-            Colors.LighterBackground = Color.FromArgb(33, 33, 37); // Control Hover
+            Colors.LighterBackground = Color.FromArgb(33, 33, 35); // Control Hover
             Colors.LightestBackground = Color.FromArgb(230, 230, 230);
             Colors.LightBorder = Color.FromArgb(81, 81, 81);
             Colors.DarkBorder = Color.FromArgb(32, 32, 32);

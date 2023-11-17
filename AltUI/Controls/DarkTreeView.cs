@@ -1208,7 +1208,7 @@ namespace AltUI.Controls
             var rect = GetNodeFullRowArea(node);
 
             // 1. Draw background
-            var bgColor = node.Odd ? ThemeProvider.Theme.Colors.HeaderBackground : ThemeProvider.Theme.Colors.GreyBackground;
+            var bgColor = node.Odd ? ThemeProvider.Theme.Colors.OpaqueBackground : ThemeProvider.Theme.Colors.LighterBackground;
 
             if (SelectedNodes.Count > 0 && SelectedNodes.Contains(node))
                 bgColor = Focused ? ThemeProvider.Theme.Colors.BlueSelection : ThemeProvider.Theme.Colors.GreySelection;
