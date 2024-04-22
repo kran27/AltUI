@@ -115,7 +115,7 @@ namespace AltUI.ColorPicker
 
       count = (int)(stream.Length / 3);
 
-      for (int i = 0; i < count; i++)
+      for (var i = 0; i < count; i++)
       {
         int r;
         int g;
@@ -175,7 +175,7 @@ namespace AltUI.ColorPicker
         throw new InvalidDataException("A maximum of 255 colors are supported by this format.");
       }
 
-      foreach (Color color in palette)
+      foreach (var color in palette)
       {
         stream.WriteByte(color.R);
         stream.WriteByte(color.G);
@@ -185,7 +185,7 @@ namespace AltUI.ColorPicker
       if (count < 256)
       {
         // add padding
-        for (int i = count; i < 256; i++)
+        for (var i = count; i < 256; i++)
         {
           stream.WriteByte(0);
           stream.WriteByte(0);

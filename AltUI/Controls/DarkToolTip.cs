@@ -27,7 +27,7 @@ namespace AltUI.Controls
 
         private void OnDraw(object sender, DrawToolTipEventArgs e) // use this event to customise the tool tip
         {
-            Graphics g = e.Graphics;
+            var g = e.Graphics;
             var font = new Font("Segoe UI", 9F);
             var strSize = g.MeasureString(e.ToolTipText, font);
             var bgRect = e.Bounds with { Width = e.Bounds.Width - 1, Height = e.Bounds.Height - 1 };

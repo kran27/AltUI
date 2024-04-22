@@ -780,12 +780,12 @@ namespace  AltUI.ColorPicker
 
       using Pen pen = new(_gridColor)
 {DashStyle = DashStyle.Dot};
-      for (int x = viewport.Left + 1; x < viewport.Right; x += pixelSize)
+      for (var x = viewport.Left + 1; x < viewport.Right; x += pixelSize)
       {
           e.Graphics.DrawLine(pen, x, viewport.Top, x, viewport.Bottom);
       }
 
-      for (int y = viewport.Top + 1; y < viewport.Bottom; y += pixelSize)
+      for (var y = viewport.Top + 1; y < viewport.Bottom; y += pixelSize)
       {
           e.Graphics.DrawLine(pen, viewport.Left, y, viewport.Right, y);
       }
@@ -808,7 +808,7 @@ namespace  AltUI.ColorPicker
       {
         _lastUpdate = cursor;
 
-        using Graphics graphics = Graphics.FromImage(_snapshotImage);
+        using var graphics = Graphics.FromImage(_snapshotImage);
         // clear the image first, in case the mouse is near the borders of the screen so there isn't enough copy content to fill the area
         graphics.Clear(Color.Empty);
 

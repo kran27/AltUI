@@ -148,9 +148,9 @@ namespace AltUI.Controls
             base.OnDropDown(e);
             if (_autoExpanding)
             {
-                int width = DropDownWidth;
-                Graphics g = CreateGraphics();
-                Font font = Font;
+                var width = DropDownWidth;
+                var g = CreateGraphics();
+                var font = Font;
                 int newWidth;
                 foreach (string s in Items)
                 {

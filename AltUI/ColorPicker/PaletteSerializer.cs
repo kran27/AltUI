@@ -112,9 +112,9 @@ namespace AltUI.ColorPicker
 
       result = null;
 
-      foreach (IPaletteSerializer checkSerializer in AllSerializers)
+      foreach (var checkSerializer in AllSerializers)
       {
-          using FileStream file = File.OpenRead(fileName);
+          using var file = File.OpenRead(fileName);
           if (checkSerializer.CanReadFrom(file))
           {
               result = checkSerializer;
@@ -143,14 +143,14 @@ namespace AltUI.ColorPicker
         LoadSerializers();
       }
 
-      foreach (IPaletteSerializer serializer in _serializerCache.Where(serializer => !(string.IsNullOrEmpty(serializer.DefaultExtension) || openExtensions.Contains(serializer.DefaultExtension))))
+      foreach (var serializer in _serializerCache.Where(serializer => !(string.IsNullOrEmpty(serializer.DefaultExtension) || openExtensions.Contains(serializer.DefaultExtension))))
       {
         StringBuilder extensionMask;
         string filter;
 
         extensionMask = new StringBuilder();
 
-        foreach (string extension in serializer.DefaultExtension.Split(new[]
+        foreach (var extension in serializer.DefaultExtension.Split(new[]
                                                                        {
                                                                          ';'
                                                                        }, StringSplitOptions.RemoveEmptyEntries))
@@ -232,7 +232,7 @@ namespace AltUI.ColorPicker
       _defaultOpenFilter = null;
       _defaultSaveFileter = null;
 
-      foreach (Type type in AppDomain.CurrentDomain.GetAssemblies().SelectMany(assembly => GetLoadableTypes(assembly).Where(type => !type.IsAbstract && type.IsPublic && typeof(IPaletteSerializer).IsAssignableFrom(type))))
+      foreach (var type in AppDomain.CurrentDomain.GetAssemblies().SelectMany(assembly => GetLoadableTypes(assembly).Where(type => !type.IsAbstract && type.IsPublic && typeof(IPaletteSerializer).IsAssignableFrom(type))))
       {
         try
         {

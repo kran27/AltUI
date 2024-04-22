@@ -82,7 +82,7 @@ namespace AltUI.Collections
 
         public new void Clear()
         {
-            ObservableListModified<T> removed = new ObservableListModified<T>(this.ToList());
+            var removed = new ObservableListModified<T>(this.ToList());
             base.Clear();
             
             if (removed.Items.Count() > 0 && ItemsRemoved != null)

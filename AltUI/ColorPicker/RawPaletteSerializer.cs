@@ -106,7 +106,7 @@ namespace AltUI.ColorPicker
 
       results = new ColorCollection();
 
-      for (int i = 0; i < stream.Length / 3; i++)
+      for (var i = 0; i < stream.Length / 3; i++)
       {
         int r;
         int g;
@@ -139,7 +139,7 @@ namespace AltUI.ColorPicker
         throw new ArgumentNullException(nameof(palette));
       }
 
-      foreach (Color color in palette)
+      foreach (var color in palette)
       {
         stream.WriteByte(color.R);
         stream.WriteByte(color.G);

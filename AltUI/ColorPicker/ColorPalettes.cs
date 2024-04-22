@@ -31,7 +31,7 @@ namespace  AltUI.ColorPicker
 
         results = new List<Color>();
 
-        foreach (PropertyInfo property in typeof(Color).GetProperties(BindingFlags.Public | BindingFlags.Static).Where(property => property.PropertyType == typeof(Color)))
+        foreach (var property in typeof(Color).GetProperties(BindingFlags.Public | BindingFlags.Static).Where(property => property.PropertyType == typeof(Color)))
         {
           Color color;
 
@@ -120,14 +120,16 @@ namespace  AltUI.ColorPicker
       topRow = topRow.ToArray();
       results.AddRange(topRow);
 
-      for (int i = 5; i >= 0; i--)
+      for (var i = 5; i >= 0; i--)
       {
-        foreach (Color color in topRow)
+        foreach (var color in topRow)
         {
           HslColor hsl;
 
-          hsl = new HslColor(color);
-          hsl.L = (5 + i + 16 * i) / 100D;
+          hsl = new HslColor(color)
+          {
+            L = (5 + i + 16 * i) / 100D
+          };
 
           results.Add(hsl.ToRgbColor());
         }

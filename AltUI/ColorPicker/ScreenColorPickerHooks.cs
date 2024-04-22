@@ -147,15 +147,15 @@ namespace  AltUI.ColorPicker
 
     private static IntPtr SetHook(LowLevelMouseProc proc)
     {
-        using Process curProcess = Process.GetCurrentProcess();
-        using ProcessModule curModule = curProcess.MainModule;
+        using var curProcess = Process.GetCurrentProcess();
+        using var curModule = curProcess.MainModule;
         return NativeMethods.SetWindowsHookEx(NativeMethods.WH_MOUSE_LL, proc, NativeMethods.GetModuleHandle(curModule.ModuleName), 0);
     }
 
     private static IntPtr SetHook(LowLevelKeyboardProc proc)
     {
-        using Process curProcess = Process.GetCurrentProcess();
-        using ProcessModule curModule = curProcess.MainModule;
+        using var curProcess = Process.GetCurrentProcess();
+        using var curModule = curProcess.MainModule;
         return NativeMethods.SetWindowsHookEx(NativeMethods.WH_KEYBOARD_LL, proc, NativeMethods.GetModuleHandle(curModule.ModuleName), 0);
     }
 

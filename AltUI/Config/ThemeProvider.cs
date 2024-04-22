@@ -116,7 +116,7 @@ namespace AltUI.Config
     {
         public static GraphicsPath RoundedRect(Rectangle bounds, int radius, bool flatBottom = false, int bottomOffset = 0, bool flatTop = false)
         {
-            int diameter = radius * 2;
+            var diameter = radius * 2;
             Size size = new(diameter, diameter);
             Rectangle arc = new(bounds.Location, size);
             GraphicsPath path = new();
@@ -172,7 +172,7 @@ namespace AltUI.Config
             if (pen == null)
                 throw new ArgumentNullException("pen");
 
-            using GraphicsPath path = RoundedRect(bounds, cornerRadius, flatBottom, bottomOffset, flatTop);
+            using var path = RoundedRect(bounds, cornerRadius, flatBottom, bottomOffset, flatTop);
             graphics.DrawPath(pen, path);
         }
 
@@ -183,7 +183,7 @@ namespace AltUI.Config
             if (pen == null)
                 throw new ArgumentNullException("pen");
 
-            int diameter = cornerRadius * 2;
+            var diameter = cornerRadius * 2;
             Size size = new(diameter, diameter);
             Rectangle arc = new(bounds.Location, size);
 
@@ -225,13 +225,13 @@ namespace AltUI.Config
             if (brush == null)
                 throw new ArgumentNullException("brush");
 
-            using GraphicsPath path = RoundedRect(bounds, cornerRadius, flatBottom, bottomOffset, flatTop);
+            using var path = RoundedRect(bounds, cornerRadius, flatBottom, bottomOffset, flatTop);
             graphics.FillPath(brush, path);
         }
 
         public static void DrawRectangleCorners(this Graphics graphics, Brush brush, Rectangle bounds, int cornerRadius)
         {
-            GraphicsPath path = RoundedRect(bounds, cornerRadius);
+            var path = RoundedRect(bounds, cornerRadius);
 
             path.AddLine(bounds.Left, bounds.Top, bounds.Right, bounds.Top);
             path.AddLine(bounds.Right, bounds.Bottom, bounds.Left, bounds.Bottom);

@@ -62,7 +62,7 @@ namespace  AltUI.ColorPicker
     public ColorCollection(ColorCollection collection)
       : this()
     {
-      for (int i = 0; i < collection.Count; i++)
+      for (var i = 0; i < collection.Count; i++)
       {
         Add(collection[i]);
       }
@@ -136,7 +136,7 @@ namespace  AltUI.ColorPicker
         throw new ArgumentException(string.Format("Cannot find a palette serializer for '{0}'", fileName), nameof(fileName));
       }
 
-      using FileStream file = File.OpenRead(fileName);
+      using var file = File.OpenRead(fileName);
       return serializer.Deserialize(file);
     }
 
@@ -274,7 +274,7 @@ namespace  AltUI.ColorPicker
     /// <param name="colors">The collection whose elements should be added to the end of the <see cref="ColorCollection"/>.</param>
     public void AddRange(IEnumerable<Color> colors)
     {
-      foreach (Color color in colors)
+      foreach (var color in colors)
       {
         Add(color);
       }
@@ -319,7 +319,7 @@ namespace  AltUI.ColorPicker
 
         result = -1;
 
-        for (int i = 0; i < Count; i++)
+        for (var i = 0; i < Count; i++)
         {
           Color original;
 
@@ -391,7 +391,7 @@ namespace  AltUI.ColorPicker
 
       serializer = Activator.CreateInstance<T>();
 
-      using FileStream file = File.OpenWrite(fileName);
+      using var file = File.OpenWrite(fileName);
       serializer.Serialize(file, this);
     }
 
@@ -528,7 +528,7 @@ namespace  AltUI.ColorPicker
       {
         _indexedLookup = new Dictionary<int, int>();
 
-        for (int i = 0; i < Count; i++)
+        for (var i = 0; i < Count; i++)
         {
           Color color;
           int key;
@@ -606,7 +606,7 @@ namespace  AltUI.ColorPicker
       if (result)
       {
         // check colors - by value though, as Color.Cornflowerblue != Color.FromArgb(255, 100, 149, 237)
-        for (int i = 0; i < Count; i++)
+        for (var i = 0; i < Count; i++)
         {
           Color expected;
           Color actual;

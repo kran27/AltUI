@@ -108,7 +108,7 @@ namespace AltUI.ColorPicker
       }
 
       colorCount = Convert.ToInt32(reader.ReadLine());
-      for (int i = 0; i < colorCount; i++)
+      for (var i = 0; i < colorCount; i++)
       {
           int r;
           int g;
@@ -155,7 +155,7 @@ namespace AltUI.ColorPicker
       writer.WriteLine("JASC-PAL");
       writer.WriteLine("0100");
       writer.WriteLine(palette.Count);
-      foreach (Color color in palette)
+      foreach (var color in palette)
       {
           writer.Write("{0} ", color.R);
           writer.Write("{0} ", color.G);

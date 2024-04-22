@@ -134,9 +134,11 @@ namespace AltUI.ColorPicker
         {
             HslColor color;
 
-            color = new HslColor(Color);
+            color = new HslColor(Color)
+            {
+                S = 0
+            };
 
-            color.S = 0;
             Color1 = color.ToRgbColor();
 
             color.S = 1;

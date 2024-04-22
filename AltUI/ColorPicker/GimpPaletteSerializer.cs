@@ -189,7 +189,7 @@ namespace AltUI.ColorPicker
       writer.WriteLine("Columns: 8");
       writer.WriteLine("#");
 
-      foreach (Color color in palette)
+      foreach (var color in palette)
       {
           writer.Write("{0,-3} ", color.R);
           writer.Write("{0,-3} ", color.G);

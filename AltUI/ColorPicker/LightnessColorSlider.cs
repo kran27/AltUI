@@ -152,7 +152,7 @@ namespace AltUI.ColorPicker
             custom = new ColorCollection();
             color = new HslColor(_color);
 
-            for (int i = 0; i < 100; i++)
+            for (var i = 0; i < 100; i++)
             {
                 color.L = i / 100D;
 

@@ -7,9 +7,9 @@ namespace AltUI.Extensions
         internal static Bitmap SetColor(this Bitmap bitmap, Color color)
         {
             var newBitmap = new Bitmap(bitmap.Width, bitmap.Height);
-            for (int i = 0; i < bitmap.Width; i++)
+            for (var i = 0; i < bitmap.Width; i++)
             {
-                for (int j = 0; j < bitmap.Height; j++)
+                for (var j = 0; j < bitmap.Height; j++)
                 {
                     var pixel = bitmap.GetPixel(i, j);
                     if (pixel.A > 0)
@@ -22,9 +22,9 @@ namespace AltUI.Extensions
         internal static Bitmap ChangeColor(this Bitmap bitmap, Color oldColor, Color newColor)
         {
             var newBitmap = new Bitmap(bitmap.Width, bitmap.Height);
-            for (int i = 0; i < bitmap.Width; i++)
+            for (var i = 0; i < bitmap.Width; i++)
             {
-                for (int j = 0; j < bitmap.Height; j++)
+                for (var j = 0; j < bitmap.Height; j++)
                 {
                     var pixel = bitmap.GetPixel(i, j);
                     if (pixel == oldColor)

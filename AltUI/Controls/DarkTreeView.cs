@@ -1283,9 +1283,9 @@ namespace AltUI.Controls
                     if (childNode.Expanded)
                         DrawChildNodes(childNode, g);
 
-                    bool isInTopView = Viewport.Top <= childNode.FullArea.Y;  
-                    bool isWithin = childNode.FullArea.Y < Viewport.Top + Viewport.Height;
-                    bool isPastBottomView = childNode.FullArea.Y > Viewport.Top + Viewport.Height;
+                    var isInTopView = Viewport.Top <= childNode.FullArea.Y;  
+                    var isWithin = childNode.FullArea.Y < Viewport.Top + Viewport.Height;
+                    var isPastBottomView = childNode.FullArea.Y > Viewport.Top + Viewport.Height;
 
                     if (isInTopView && isWithin)
                         DrawNode(childNode, g);

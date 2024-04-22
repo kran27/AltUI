@@ -176,7 +176,7 @@ namespace AltUI.ColorPicker
       // read the number of colors, which also occupies two bytes
       colorCount = this.ReadInt16(stream);
 
-      for (int i = 0; i < colorCount; i++)
+      for (var i = 0; i < colorCount; i++)
       {
         AdobePhotoshopColorSwatchColorSpace colorSpace;
         int value1;
@@ -271,7 +271,7 @@ namespace AltUI.ColorPicker
 
       swatchIndex = 0;
 
-      foreach (Color color in palette)
+      foreach (var color in palette)
       {
         short value1;
         short value2;

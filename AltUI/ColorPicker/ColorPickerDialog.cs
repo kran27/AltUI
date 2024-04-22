@@ -270,7 +270,7 @@ namespace  AltUI.ColorPicker
       colorGrid.Colors.Clear();
 
       // copy a maximum of 96 colours from the custom plaette
-      for (int i = 0; i < Math.Min(96, _customColors.Count); i++)
+      for (var i = 0; i < Math.Min(96, _customColors.Count); i++)
       {
         Color color;
 
@@ -317,7 +317,7 @@ namespace  AltUI.ColorPicker
                         throw new InvalidOperationException("Serializer does not support reading palettes.");
                     }
 
-                    using (FileStream file = File.OpenRead(dialog.FileName))
+                    using (var file = File.OpenRead(dialog.FileName))
                     {
                         palette = serializer.Deserialize(file);
                     }
@@ -407,7 +407,7 @@ namespace  AltUI.ColorPicker
 
                 try
                 {
-                    using FileStream file = File.OpenWrite(dialog.FileName);
+                    using var file = File.OpenWrite(dialog.FileName);
                     serializer.Serialize(file, colorGrid.Colors);
                 }
                 catch (Exception ex)

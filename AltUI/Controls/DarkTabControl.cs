@@ -44,9 +44,9 @@ namespace AltUI.Controls
         private TabPage predraggedTab;
         private int hoveringTabIndex;
 
-        private SubClass scUpDown = null;
-        private bool bUpDown = false;
-        private bool hasFocus = false;
+        private SubClass scUpDown;
+        private bool bUpDown;
+        private bool hasFocus;
 
         public DarkTabControl()
         {
@@ -537,7 +537,7 @@ namespace AltUI.Controls
             SubClassed = _SubClass;
         }
 
-        public bool SubClassed { get; set; } = false;
+        public bool SubClassed { get; set; }
 
         protected override void WndProc(ref Message m)
         {

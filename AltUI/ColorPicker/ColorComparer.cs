@@ -149,7 +149,7 @@ namespace  AltUI.ColorPicker
 
       // Inverse of sRGB "gamma" function. (approx 2.2)
 
-      double c = ic / 255.0;
+      var c = ic / 255.0;
       if (c <= 0.04045)
       {
         result = c / 12.92;

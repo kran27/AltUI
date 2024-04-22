@@ -149,7 +149,7 @@ namespace AltUI.ColorPicker
           }
           else
           {
-            for (int i = 0; i < chunkLength; i++)
+            for (var i = 0; i < chunkLength; i++)
             {
               stream.ReadByte();
             }
@@ -158,7 +158,7 @@ namespace AltUI.ColorPicker
         else
         {
           // color map chunk!
-          for (int i = 0; i < chunkLength / 3; i++)
+          for (var i = 0; i < chunkLength / 3; i++)
           {
             int r;
             int g;

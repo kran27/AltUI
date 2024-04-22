@@ -205,14 +205,19 @@ namespace AltUI.Docking
             var bottomRegion = new DarkDockRegion(this, DarkDockArea.Bottom);
             _regions.Add(DarkDockArea.Bottom, bottomRegion);
 
+            var noRegion = new DarkDockRegion(this, DarkDockArea.None);
+            _regions.Add(DarkDockArea.None, noRegion);
+
             // Add the regions in this order to force the bottom region to be positioned
             // between the left and right regions properly.
+            Controls.Add(noRegion);
             Controls.Add(documentRegion);
             Controls.Add(bottomRegion);
             Controls.Add(leftRegion);
             Controls.Add(rightRegion);
 
             // Create tab index for intuitive tabbing order
+            noRegion.TabIndex = 4;
             documentRegion.TabIndex = 0;
             rightRegion.TabIndex = 1;
             bottomRegion.TabIndex = 2;

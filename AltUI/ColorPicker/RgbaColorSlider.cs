@@ -167,7 +167,7 @@ namespace AltUI.ColorPicker
             color = Color;
             channel = Channel;
 
-            for (int i = 0; i < 254; i++)
+            for (var i = 0; i < 254; i++)
             {
                 int a;
                 int r;

@@ -154,7 +154,7 @@ namespace AltUI.ColorPicker
 ; The alpha ('aa') value specifies how transparent a color is. FF is fully opaque, 00 is fully transparent.
 ; A palette must consist of ninety six (96) colors. If there are less than this, the remaining color
 ; slots will be set to white (FFFFFFFF). If there are more, then the remaining colors will be ignored.");
-      foreach (Color color in palette)
+      foreach (var color in palette)
       {
           writer.WriteLine("{0:X2}{1:X2}{2:X2}{3:X2}", color.A, color.R, color.G, color.B);
       }

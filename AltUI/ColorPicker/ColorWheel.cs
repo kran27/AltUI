@@ -682,7 +682,7 @@ namespace  AltUI.ColorPicker
         _centerPoint = new PointF(w / 2.0F, h / 2.0F);
         _radius = GetRadius(_centerPoint);
 
-        for (int i = 0; i < count; i++)
+        for (var i = 0; i < count; i++)
         {
           double angleR;
           PointF location;
@@ -1178,7 +1178,7 @@ namespace  AltUI.ColorPicker
 
         // HACK: smooth out the edge of the wheel.
         // https://github.com/cyotek/ AltUI.ColorPicker.ColorPicker/issues/1 - the linked source doesn't do this hack yet draws with a smoother edge
-        using (Pen pen = CreateSmoothingPen())
+        using (var pen = CreateSmoothingPen())
         {
           g.DrawEllipse(pen, new RectangleF(_centerPoint.X - _radius, _centerPoint.Y - _radius, _radius * 2, _radius * 2));
         }
@@ -1508,7 +1508,7 @@ namespace  AltUI.ColorPicker
 
         if (_secondaryColors != null && _secondaryColors.Length > 0)
         {
-          for (int i = 0; i < _secondaryColors.Length; i++)
+          for (var i = 0; i < _secondaryColors.Length; i++)
           {
             PaintCenterLine(g, _secondaryColors[i], false);
           }
@@ -1520,7 +1520,7 @@ namespace  AltUI.ColorPicker
     {
       if (_secondaryColors != null && _secondaryColors.Length > 0)
       {
-        for (int i = 0; i < _secondaryColors.Length; i++)
+        for (var i = 0; i < _secondaryColors.Length; i++)
         {
           PaintColor(e, _secondaryColors[i], false);
         }
