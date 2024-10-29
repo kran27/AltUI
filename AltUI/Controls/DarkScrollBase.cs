@@ -36,6 +36,9 @@ namespace AltUI.Controls
 
         #region Property Region
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public int MouseScrollPixelStep { get; set; } = 20;
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -323,16 +326,16 @@ namespace AltUI.Controls
             if (!horizontal)
             {
                 if (e.Delta > 0)
-                    _vScrollBar.ScrollByPhysical(3);
+                    _vScrollBar.ScrollByPhysical(-MouseScrollPixelStep);
                 else if (e.Delta < 0)
-                    _vScrollBar.ScrollByPhysical(-3);
+                    _vScrollBar.ScrollByPhysical(MouseScrollPixelStep);
             }
             else
             {
                 if (e.Delta > 0)
-                    _hScrollBar.ScrollByPhysical(3);
+                    _hScrollBar.ScrollByPhysical(-MouseScrollPixelStep);
                 else if (e.Delta < 0)
-                    _hScrollBar.ScrollByPhysical(-3);
+                    _hScrollBar.ScrollByPhysical(MouseScrollPixelStep);
             }
         }
 
