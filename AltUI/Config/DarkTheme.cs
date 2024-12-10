@@ -32,6 +32,8 @@ namespace AltUI.Config
             Colors.LightBlueBorder = Color.FromArgb(86, 97, 114);
             Colors.ActiveControl = Color.FromArgb(159, 178, 196);
             Colors.OpaqueBackground = Color.FromArgb(28, 28, 30);
+            Colors.TransparentBackground = Color.FromArgb(31, 31, 32);
+            Colors.DefaultBackground = Color.FromArgb(16, 16, 17);
 
             Sizes.Padding = 10;
             Sizes.ScrollBarSize = 15;

@@ -28,14 +28,12 @@ namespace AltUI.Config
                 if (LightMode)
                 {
                     if (TransparencyMode & WindowsVersion >= 22000)
-                    { return Color.FromArgb(231, 231, 232); }
-
+                        return Color.FromArgb(231, 231, 232);
                     return Color.FromArgb(255, 255, 255);
                 }
 
                 if (TransparencyMode & WindowsVersion >= 22000)
-                { return Color.FromArgb(31, 31, 32); }
-
+                    return Color.FromArgb(31, 31, 32);
                 return Color.FromArgb(16, 16, 17);
             }
         }
