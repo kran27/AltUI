@@ -274,7 +274,7 @@ namespace  AltUI.ColorPicker
       get => _alpha;
       set
       {
-        if (value < 0 || value > 1)
+        if (value is < 0 or > 1)
         {
           throw new ArgumentOutOfRangeException(nameof(value), value, "Value must be between 0 and 1.");
         }
@@ -320,7 +320,7 @@ namespace  AltUI.ColorPicker
       get => _colorStep;
       set
       {
-        if (value < 1 || value > 359)
+        if (value is < 1 or > 359)
         {
           throw new ArgumentOutOfRangeException(nameof(value), value, "Value must be between 1 and 359");
         }
@@ -415,7 +415,7 @@ namespace  AltUI.ColorPicker
       get => _lightness;
       set
       {
-        if (value < 0 || value > 1)
+        if (value is < 0 or > 1)
         {
           throw new ArgumentOutOfRangeException(nameof(value), value, "Value must be between 0 and 1.");
         }
@@ -1459,14 +1459,7 @@ namespace  AltUI.ColorPicker
 
     private bool IsNavigationKey(Keys keyCode)
     {
-      return keyCode == Keys.Up
-             || keyCode == Keys.Down
-             || keyCode == Keys.Left
-             || keyCode == Keys.Right
-             || keyCode == Keys.PageUp
-             || keyCode == Keys.PageDown
-             || keyCode == Keys.Home
-             || keyCode == Keys.End;
+      return keyCode is Keys.Up or Keys.Down or Keys.Left or Keys.Right or Keys.PageUp or Keys.PageDown or Keys.Home or Keys.End;
     }
 
     private void PaintArrowHead(Graphics g)

@@ -441,7 +441,7 @@ namespace AltUI.Controls
                 g.FillRoundedRectangle(b, modRect, 4);
             }
 
-            if (ButtonStyle == DarkButtonStyle.Normal || ButtonStyle == DarkButtonStyle.Image)
+            if (ButtonStyle is DarkButtonStyle.Normal or DarkButtonStyle.Image)
             {
                 using var p = new Pen(borderColor, 1);
                 var modRect = new Rectangle(rect.Left, rect.Top, rect.Width - 1, rect.Height - 1);

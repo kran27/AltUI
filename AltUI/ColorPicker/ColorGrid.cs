@@ -1101,7 +1101,7 @@ namespace AltUI.ColorPicker
         {
             bool result;
 
-            if (keyData == Keys.Left || keyData == Keys.Up || keyData == Keys.Down || keyData == Keys.Right || keyData == Keys.Enter || keyData == Keys.Home || keyData == Keys.End)
+            if (keyData is Keys.Left or Keys.Up or Keys.Down or Keys.Right or Keys.Enter or Keys.Home or Keys.End)
             {
                 result = true;
             }

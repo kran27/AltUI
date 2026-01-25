@@ -86,7 +86,7 @@ namespace AltUI.ColorPicker
 
       try
       {
-        result = stream.Length == 768 || stream.Length == 772;
+        result = stream.Length is 768 or 772;
       }
       catch
       {

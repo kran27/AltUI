@@ -108,7 +108,7 @@ namespace  AltUI.ColorPicker
           _owner.RequestUpdate();
         }
 
-        if (message == NativeMethods.WM_LBUTTONDOWN || message == NativeMethods.WM_NCLBUTTONDOWN)
+        if (message is NativeMethods.WM_LBUTTONDOWN or NativeMethods.WM_NCLBUTTONDOWN)
         {
           // if the user presses a button then update the colour, release,
           // but also eat the message so the click isn't intercepted

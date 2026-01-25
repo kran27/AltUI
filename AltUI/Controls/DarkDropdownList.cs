@@ -169,7 +169,7 @@ namespace AltUI.Controls
 
             var pos = new Point(0, ClientRectangle.Bottom);
 
-            if (_dropdownDirection == ToolStripDropDownDirection.AboveLeft || _dropdownDirection == ToolStripDropDownDirection.AboveRight)
+            if (_dropdownDirection is ToolStripDropDownDirection.AboveLeft or ToolStripDropDownDirection.AboveRight)
                 pos.Y = 0;
 
             _menu.Show(this, pos, _dropdownDirection);

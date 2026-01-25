@@ -310,7 +310,7 @@ namespace AltUI.Controls
 
         protected override void OnMouseDown(MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
+            if (e.Button is MouseButtons.Left or MouseButtons.Right)
             {
                 foreach (var node in Nodes)
                     CheckNodeClick(node, OffsetMousePosition, e.Button);
@@ -384,7 +384,7 @@ namespace AltUI.Controls
                 return;
             }
 
-            if (e.KeyCode == Keys.Down || e.KeyCode == Keys.Up)
+            if (e.KeyCode is Keys.Down or Keys.Up)
             {
                 if (MultiSelect && ModifierKeys == Keys.Shift)
                 {
@@ -426,7 +426,7 @@ namespace AltUI.Controls
                 }
             }
 
-            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+            if (e.KeyCode is Keys.Left or Keys.Right)
             {
                 if (e.KeyCode == Keys.Left)
                 {

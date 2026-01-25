@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using AltUI.ColorPicker;
 using AltUI.Config;
 using AltUI.Forms;
-#pragma warning disable CA1416
 
 namespace AltUI.Controls
 {
