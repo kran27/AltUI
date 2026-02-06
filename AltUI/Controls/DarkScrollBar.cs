@@ -75,6 +75,9 @@ namespace AltUI.Controls
                     value = Minimum;
 
                 var maximumValue = Maximum - ViewSize;
+                if (maximumValue < Minimum)
+                    maximumValue = Minimum;
+
                 if (value > maximumValue)
                     value = maximumValue;
 
@@ -376,13 +379,7 @@ namespace AltUI.Controls
 
         public void ScrollByPhysical(int offsetInPixels)
         {
-            var isVert = _scrollOrientation == DarkScrollOrientation.Vertical;
-
-            var thumbPos = isVert ? (_thumbArea.Top - _trackArea.Top) : (_thumbArea.Left - _trackArea.Left);
-
-            var newPosition = thumbPos - offsetInPixels;
-
-            ScrollToPhysical(newPosition);
+            Value += offsetInPixels;
         }
 
         public void UpdateScrollBar()
